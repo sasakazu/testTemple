@@ -1,0 +1,17 @@
+//
+//  animal.json
+//  testTemple
+//
+//  Created by 笹倉一也 on 2021/08/12.
+//
+
+import Foundation
+
+
+struct Animal: Codable {
+    let park: String
+    let animals: [String]
+    let nickname: Dictionary<String, String>
+}
+
+

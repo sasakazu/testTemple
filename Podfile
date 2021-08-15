@@ -8,6 +8,7 @@ target 'testTemple' do
   # Pods for testTemple
 
   pod 'Firebase'
+  pod 'SwiftyJSON'
   
   target 'testTempleTests' do
     inherit! :search_paths

@@ -17,6 +17,8 @@
 		7371F5EC26BFDC0F0099F69C /* testTempleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F5EB26BFDC0F0099F69C /* testTempleTests.swift */; };
 		7371F5F726BFDC0F0099F69C /* testTempleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7371F5F626BFDC0F0099F69C /* testTempleUITests.swift */; };
 		7371F60526BFDF0F0099F69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7371F60426BFDF0F0099F69C /* GoogleService-Info.plist */; };
+		738400EA26C51A940070F8CF /* employee.json in Resources */ = {isa = PBXBuildFile; fileRef = 738400E926C51A940070F8CF /* employee.json */; };
+		738400EC26C51C200070F8CF /* animal.json in Resources */ = {isa = PBXBuildFile; fileRef = 738400EB26C51C200070F8CF /* animal.json */; };
 		8DABAB4B037E5B20106DD69C /* Pods_testTemple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B707F933E891704845F6B95 /* Pods_testTemple.framework */; };
 		BF2DBB9D1BE4C780E69CDB12 /* Pods_testTemple_testTempleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0500167CBD8B3E666102CEE /* Pods_testTemple_testTempleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		7371F5F626BFDC0F0099F69C /* testTempleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTempleUITests.swift; sourceTree = "<group>"; };
 		7371F5F826BFDC0F0099F69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7371F60426BFDF0F0099F69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		738400E926C51A940070F8CF /* employee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = employee.json; sourceTree = "<group>"; };
+		738400EB26C51C200070F8CF /* animal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = animal.json; sourceTree = "<group>"; };
 		913564AABA129739F5A5E09F /* Pods-testTemple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTemple.debug.xcconfig"; path = "Target Support Files/Pods-testTemple/Pods-testTemple.debug.xcconfig"; sourceTree = "<group>"; };
 		D3D2CACEA2B0934552405965 /* Pods_testTempleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testTempleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0500167CBD8B3E666102CEE /* Pods_testTemple_testTempleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testTemple_testTempleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +138,9 @@
 				7371F5D426BFDC0E0099F69C /* AppDelegate.swift */,
 				7371F5D626BFDC0E0099F69C /* SceneDelegate.swift */,
 				7371F5D826BFDC0E0099F69C /* ViewController.swift */,
+				738400EB26C51C200070F8CF /* animal.json */,
 				7371F5DA26BFDC0E0099F69C /* Main.storyboard */,
+				738400E926C51A940070F8CF /* employee.json */,
 				7371F5DD26BFDC0F0099F69C /* Assets.xcassets */,
 				7371F5DF26BFDC0F0099F69C /* LaunchScreen.storyboard */,
 				7371F60426BFDF0F0099F69C /* GoogleService-Info.plist */,
@@ -283,6 +289,8 @@
 				7371F5E126BFDC0F0099F69C /* LaunchScreen.storyboard in Resources */,
 				7371F5DE26BFDC0F0099F69C /* Assets.xcassets in Resources */,
 				7371F5DC26BFDC0E0099F69C /* Main.storyboard in Resources */,
+				738400EA26C51A940070F8CF /* employee.json in Resources */,
+				738400EC26C51C200070F8CF /* animal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

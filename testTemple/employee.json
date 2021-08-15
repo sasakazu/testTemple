@@ -1,0 +1,20 @@
+[
+  {
+    "age" : 45,
+    "code" : "001",
+    "name" : "山田",
+    "absence" : false
+  },
+  {
+    "age" : 30,
+    "code" : "002",
+    "name" : "鈴木",
+    "absence" : true
+  },
+  {
+    "age" : 25,
+    "code" : "003",
+    "name" : "佐藤",
+    "absence" : false
+  }
+]
