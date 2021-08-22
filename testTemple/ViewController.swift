@@ -8,85 +8,83 @@
 import UIKit
 import SwiftyJSON
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController {
 
-    var couponBenefit: String = ""
-    var couponDeadline: String = ""
+   
+//    楽天レシピ
+    struct ResultList: Codable {
+
+        let result: [User]
+
+    struct User: Codable {
+        let foodImageUrl :String
+        let recipeTitle  :String
+    }
+    }
     
-    @IBOutlet weak var tableview: UITableView!
     
-//    var couponBenefit: String = "" {
-//         didSet{
-//             tableView.reloadData()
-//         }
-//     }
-//     var couponDeadline: String = "" {
-//         didSet{
-//             tableView.reloadData()
-//         }
-//     }
+
+    
+    
+//    struct ResultList: Codable {
+//
+//        let Items: Item
+//
+//        struct Item: Codable{
+//
+//            let items:[User]
+//
+//
+//    struct User: Codable {
+//        let title :String
+//
+//
+//        }
+//
+//        }
+//
+//    }
+//
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//      楽天api(array)
-//        let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&title=%E3%82%BD%E3%83%8A%E3%83%81%E3%83%8D&artistName=%E5%8C%97%E9%87%8E%E6%AD%A6&booksGenreId=003&applicationId=1024730205059605378")!
+        getRApi()
+    
+    
         
-//        テスト用
-        let url: URL = URL(string: "https://jsonplaceholder.typicode.com/todos/")!
-        
-               let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-                
-                
-                do{
-                let couponData = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
-                              
-                    DispatchQueue.main.async() { () -> Void in
-                                       self.couponBenefit = couponData["title"] as! String
-//                                       self.couponDeadline = couponData["artistNameKana"] as! String
-                                       }
-                    
-//                    print(String(data: data!, encoding: .utf8) ?? "")
-                    
-                  print(couponData) // Jsonの中身を表示
-                
-                }
-                    
-                   catch {
-                    print(error)
-            
-                   }
-                
+    }
+    
 
-               })
-               task.resume()
-        
-        tableview.reloadData()
-        
-    }
-    
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-             //テキストにクーポン特典を設定
-             cell.textLabel?.text = self.couponBenefit
-             //サブテキストにクーポンの有効期限を設定
-             cell.detailTextLabel?.text = "有効期限：" + self.couponDeadline
+//    楽天レシび
+    private func getRApi(){
+              guard let url = URL(string: "https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&applicationId=1024730205059605378") else {return}
 
-             return cell
+        
+//        楽天ブックス
+//        private func getRApi(){
+//                  guard let url = URL(string: "https://app.rakuten.co.jp/services/api/BooksDVD/Search/20170404?format=json&artistName=%E5%8C%97%E9%87%8E%E6%AD%A6&booksGenreId=003&applicationId=1024730205059605378") else {return}
+//
         
         
-    }
-    
-    
-    
-    
+              let task = URLSession.shared.dataTask(with: url) { (data, response, err)in
+                  if let err = err {
+                      print("情報の取得に失敗しました。:", err)
+                      return
+                  }
+                  if let data = data{
+                      do{
+                          let resultList = try JSONDecoder().decode(ResultList.self, from: data)
+                          print("json: ", resultList)
+                      }catch(let err){
+                           print("情報の取得に失敗しました。:", err)
+                      }
+                  }
+              }
+              task.resume()
+          }
+      
              
 }
